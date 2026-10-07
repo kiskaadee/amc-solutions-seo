@@ -1,0 +1,26 @@
+# Python & Tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.ruff_cache/
+
+# Graphify generated output & caches
+graphify-out/
+*.bak
+
+# Scratch & Raw dumps
+tools/raw/*
+!tools/raw/.gitkeep
+*.tmp
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# Obsidian local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
