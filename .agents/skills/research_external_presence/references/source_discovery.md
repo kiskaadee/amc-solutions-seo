@@ -9,8 +9,9 @@ Guide the selection of external source classes and query boundaries based on res
 Rather than searching aimlessly or treating every platform as mandatory, choose source classes aligned with the investigation objectives:
 
 ### Class 1: Official and Government Registries
-- **Purpose:** Inspect registered legal filings, corporate registration dates, official status, and public contract disclosures.
-- **Targets:** National tax registries, chambers of commerce, trade registries, and public procurement portals (e.g. SECOP).
+- **Purpose:** Inspect primary statutory records, corporate registration filings, official legal status, and public procurement records.
+- **Targets:** Direct government portals, official commercial registry databases (e.g. RUES, public gazettes), and statutory procurement platforms (e.g. SECOP).
+- **Boundary rule:** Commercial data aggregators and business directories (e.g. Informa, Portafolio, Datacrédito) are intermediaries and belong to Class 3, not Class 1.
 - **Key observable data:** Stated legal entity name, tax/fiscal ID, registered address, authorized economic activities, public contract awards.
 
 ### Class 2: Local and Map Platforms
@@ -18,9 +19,9 @@ Rather than searching aimlessly or treating every platform as mandatory, choose 
 - **Targets:** Google Maps / Google Business Profile, Bing Places, OpenStreetMap.
 - **Key observable data:** Profile existence, displayed name, displayed address, phone number, website link, category labels, published hours, reviews, and claimed or verified indicators when explicitly exposed.
 
-### Class 3: Professional Networks and Commercial Directories
-- **Purpose:** Observe commercial directory entries and professional platform profiles.
-- **Targets:** LinkedIn company pages, chamber member directories, industry trade associations, accredited business portals.
+### Class 3: Commercial Aggregators, Directories, and Professional Networks
+- **Purpose:** Observe commercial directory entries, commercial registry aggregators, and professional platform profiles.
+- **Targets:** Commercial aggregators (Portafolio, Informa, Datacrédito), chamber member lists, LinkedIn company pages, trade association directories.
 - **Key observable data:** Profile existence, displayed company descriptions, self-reported employee counts, listed service categories, personnel mentions, external links.
 
 ### Class 4: Unstructured Citations and Media

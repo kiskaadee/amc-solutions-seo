@@ -18,11 +18,14 @@ What the researcher directly observes on the inspected third-party resource at t
 Assertions made by a third party about facts not directly verifiable from the resource itself.
 - Example: "The directory profile states the company employs 25 engineers."
 - Rule: Record what the source claims without adopting the claim as a verified fact.
+- Contractual claims rule: Do not elevate administrative formalization (such as a contract award or procurement notice) to execution or completion unless the inspected source explicitly documents contract execution or delivery.
 
 ### 3. Corroboration (Corroboracion)
-Verification of an attribute or claim across two or more independent, non-affiliated sources.
-- An uncorroborated claim remains classified as a single-source claim.
-- Shared syndication (e.g. data scraped from the same underlying directory) does not constitute independent corroboration.
+Cross-verification of facts across distinct records. Distinguish four corroboration types:
+- **Identity corroboration:** Multiple independent sources confirming identical legal identity anchors (e.g. matching NIT and legal name across a commercial aggregator and a municipal report).
+- **Attribute corroboration:** Independent sources confirming specific operational contact points (e.g. matching phone numbers or street address).
+- **First-party consistency:** Alignment between third-party findings and the organization's own website. This establishes consistency with first-party claims, not independent external proof.
+- **Independent external corroboration:** Two or more unaffiliated third parties confirming the same factual claim without shared syndication or scraping.
 
 ### 4. Interpretation (Interpretacion)
 Hypotheses, analytical models, or potential implications drawn from recorded observations and claims.
@@ -44,7 +47,8 @@ Every finding must record:
 ## Scoping Negative Observations
 
 When an entity, profile, or attribute is not found:
-- Avoid absolute negations (e.g. "The company has no LinkedIn profile").
-- Scope the observation strictly to the evaluated query and sample:
-  - "In the evaluated sample of LinkedIn search results for query X on date Y, no active corporate page was observed."
+- Avoid absolute negations (e.g. "The company has no Google Business Profile").
+- Scope the observation strictly to the evaluated query and sample.
+- Distinguish profile existence from verified/claimed status:
+  - "In the evaluated sample for query X on date Y, no verified or claimed commercial profile was observed."
 - Negative findings must document the exact query and parameters used.
