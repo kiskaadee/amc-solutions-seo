@@ -14,6 +14,15 @@ Scripts de auditoría técnica para recopilar evidencia sobre la presencia digit
 - **Minimalismo instrumental:** Priorizar biblioteca estándar de Python y utilidades de sistema (`curl`, `openssl`, `dig`) antes de introducir dependencias externas.
 - **Aislamiento de estado:** Los volcados crudos residen en `tools/raw/` y no deben mezclarse con las notas en Markdown ni comprometerse en Git.
 
+## Herramientas Disponibles
+
+### `inspect_site.py`
+
+Script autónomo para reconocimiento HTTP inicial, detección de CMS, metadatos y extracción de grafos de enlaces. Produce un volcado estructurado bajo `tools/raw/<timestamp>/` con `headers.txt`, `homepage.html`, `robots.txt`, `sitemap.xml`, `metadata.json`, `links.json` y `summary.json`.
+
+- **Uso:** `python tools/inspect_site.py [URL_DESTINO]`
+- **Diagramas de flujo y arquitectura:** Consultar [inspect_site_flow.md](inspect_site_flow.md) para el diagrama de flujo lógico y el diagrama de secuencia temporal.
+
 ## Entorno y Validación de Código
 
 El entorno y las herramientas de validación se gestionan con `uv` dentro de `tools/`.
