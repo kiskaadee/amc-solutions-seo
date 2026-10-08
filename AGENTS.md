@@ -56,6 +56,8 @@ For every significant research, analysis, or implementation step, report:
 Keep reports concise. Do not report routine internal actions unless they affect
 the result, methodology, or reproducibility.
 
+Display processes relationships and maps using Mermaid diagrams when possible.
+
 ---
 ## Language
 

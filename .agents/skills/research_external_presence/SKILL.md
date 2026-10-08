@@ -21,8 +21,10 @@ description: >-
    - Attributed: meets the multi-anchor threshold.
    - Discarded: conflicting identifiers or homonym in unrelated domain/jurisdiction.
    - Ambiguous: partial overlap with insufficient proof. Halt attribution and record open question.
-5. **Classify findings in working set.** For each evaluated source, record entries in the research working set using the taxonomy in `references/epistemic_rules.md`:
+5. **Classify findings in working set.** For each evaluated source, record entries in the research working set following the state contract in `references/research_state_schema.md` and the taxonomy in `references/epistemic_rules.md`:
    - Direct observations vs. source claims.
+   - Candidate disposition (`admit` for admissible presence or scoped negative observation, `hold` for unresolved or insufficiently supported candidate, `discard` for confirmed irrelevant, contradictory, or misattributed candidate).
+   - Candidate anchors emitted for orchestrator review (`proposed`).
    - Corroboration across independent sources.
    - Provenance, capture date, and temporal validity of source data.
    - Scoped negative findings for unobserved entities.
