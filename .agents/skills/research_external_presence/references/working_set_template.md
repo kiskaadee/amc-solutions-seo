@@ -14,13 +14,13 @@ Estructura sugerida para documentar el conjunto de trabajo de investigacion de p
 ---
 
 ## Identificadores Ancla Verificados (Semilla)
-- **Dominio web:** [amcsolutionscolombia.com]
-- **Razon social:** [AMC SOLUTIONS COLOMBIA S.A.S.]
-- **Identificacion tributaria / NIT:** [901380770-0]
-- **Telefonos de contacto:** [+57 3136216458, ...]
-- **Correos corporativos:** [gerencia@amcsolutionscolombia.com]
-- **Ubicacion geografica:** [Valledupar, Cesar, Colombia]
-- **Sector de actividad:** [Consultoria en ingenieria minera y ambiental]
+- **Dominio web:** [ej. dominio.com]
+- **Razon social:** [ej. Denominacion Legal S.A.S. / S.A.]
+- **Identificacion tributaria / registro:** [ej. NIT / RFC / CIF / NIF]
+- **Telefonos de contacto:** [ej. +XX XXX XXXXXXX]
+- **Correos corporativos:** [ej. contacto@dominio.com]
+- **Ubicacion geografica:** [ej. Ciudad, Region, Pais]
+- **Sector de actividad:** [ej. Sector economico principal]
 
 ---
 

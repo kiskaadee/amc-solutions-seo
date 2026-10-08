@@ -11,7 +11,8 @@ Every entry in the research working set must classify findings into distinct cat
 ### 1. Direct Observation (Observacion directa)
 What the researcher directly observes on the inspected third-party resource at the time of retrieval.
 - Example: "The directory listing displays the phone number +57 3136216458."
-- Example: "The registry entry lists registration date 2020-03-15 and status Activa."
+- Example: "The inspected registry entry displays registration date 2020-03-15 and status Activa."
+- Principle: Observing X on source Y establishes that source Y displays or asserts X, not that X is independently established as objective reality.
 
 ### 2. Source Claim (Afirmacion de la fuente)
 Assertions made by a third party about facts not directly verifiable from the resource itself.

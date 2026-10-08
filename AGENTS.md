@@ -64,6 +64,10 @@ Write project documentation in Spanish.
 Keep technical identifiers in their conventional form:
 SEO, UX, UI, HTTP, DNS, CMS, JSON-LD, robots.txt, sitemap.xml, etc.
 
+## Git history
+
+Commits on main branch are allowed
+
 ---
 ## Documentation style
 
