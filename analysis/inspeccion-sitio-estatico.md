@@ -13,7 +13,7 @@ Documento de lectura estructurada que consolida las 15 observaciones empíricas 
 
 ## 2. Arquitectura de Información y Contenidos
 
-- **Rastreo y mapas de sitio:** El archivo `/robots.txt` contiene directivas predeterminadas de WordPress. La ruta `/sitemap.xml` responde HTTP 200 y redirige al índice nativo `wp-sitemap.xml` generado por el CMS ([OBS-005](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-005-mapa-del-sitio-sitemapxml-y-robotstxt)).
+- **Rastreo y mapas de sitio:** El archivo `/robots.txt` contiene directivas predeterminadas de WordPress. La ruta `/sitemap.xml` responde HTTP 200 y entrega el índice nativo `wp-sitemap.xml` generado por el CMS ([OBS-005](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-005-contenido-de-robotstxt-y-sitemaps)).
 - **Jerarquía en portada:** El único elemento H1 contiene el texto `AMC SOLUTIONS COLOMBIA`. Los elementos H2 corresponden a títulos de widgets de plantilla (*NOTICIAS*, *Categorías*, *Te has perdido*). No se detectaron elementos H3 ([OBS-006](../evidence/website/inventario-portada-y-enlaces.md#obs-006-encabezados-de-la-portada)).
 - **Catálogo de rutas descubiertas:** En la portada se identificaron enlaces internos hacia dos grupos temáticos:
   - 5 rutas bajo el prefijo `/servicios-*/`: ambientales, topografía, empresariales, geológicos y mineros ([OBS-007](../evidence/website/inventario-portada-y-enlaces.md#obs-007-enlaces-a-páginas-de-servicios)).
