@@ -29,3 +29,10 @@ Location: `.agents/skills/research_external_presence/SKILL.md`
 Transform validated research, evidence, and open questions into clear, decision-oriented communication for AMC representatives without altering epistemic status.
 
 Location: `.agents/skills/communicate_findings/SKILL.md`
+
+## Publish Document
+
+Transform an approved communication artifact into a polished distributable document (PDF) while preserving semantic and epistemic invariance.
+
+Location: `.agents/skills/publish_document/SKILL.md`
+

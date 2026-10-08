@@ -46,5 +46,6 @@ Forbidden as established facts:
 - The communication artifact is delivered in Spanish, strictly grounded in recorded evidence, aligned with the brief's goal, and approved by the user.
 
 ## Hands off to
+- `publish-document`: when an approved communication artifact requires publication as a distributable PDF deliverable.
 - AMC stakeholder interaction / interview loop.
 - `record_evidence`: AMC responses are first-party source claims. Hand them off to `record_evidence` for provenance capture, temporal bounding, and corroboration evaluation before presenting as independently established fact.
