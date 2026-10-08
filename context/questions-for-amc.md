@@ -1,6 +1,10 @@
-# Preguntas de Descubrimiento para AMC Solutions
+# Matriz Interna de Descubrimiento — AMC Solutions
 
-Banco de preguntas estructurado a partir de la evidencia técnica y de contenido recolectada en el sitio web ([OBS-001 a OBS-005](../evidence/technical/inspeccion-plataforma-y-cabeceras.md), [OBS-006 a OBS-009](../evidence/website/inventario-portada-y-enlaces.md), [OBS-010 a OBS-012](../evidence/website/paginas-servicios-y-contacto.md), [OBS-013 a OBS-015](../evidence/website/paginas-tramites-mineros.md)). Diseñado para resolver vacíos empíricos y entender la operación comercial real de la empresa antes de formular diagnósticos o propuestas.
+Matriz interna de investigación estructurada a partir de la evidencia empírica recolectada en el sitio web ([OBS-001 a OBS-005](../evidence/technical/inspeccion-plataforma-y-cabeceras.md), [OBS-006 a OBS-009](../evidence/website/inventario-portada-y-enlaces.md), [OBS-010 a OBS-012](../evidence/website/paginas-servicios-y-contacto.md), [OBS-013 a OBS-015](../evidence/website/paginas-tramites-mineros.md)).
+
+Este instrumento actúa como la fuente de verdad analítica del proyecto y alimenta dos artefactos operativos diferenciados:
+1. **Guía de Conversación para la Reunión Estratégica:** [`output/pdf/guia-reunion-amc.pdf`](../output/pdf/guia-reunion-amc.pdf) (10 preguntas abiertas orientadas a la historia y realidad comercial de AMC, sin tecnicismos).
+2. **Checklist de Onboarding Técnico y Accesos:** [`context/checklist-onboarding-tecnico.md`](checklist-onboarding-tecnico.md) (requerimientos de infraestructura, WordPress, hosting, DNS y telemetría para el área técnica).
 
 ---
 
