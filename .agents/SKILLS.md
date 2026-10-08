@@ -23,3 +23,9 @@ Location: `.agents/skills/review_findings/SKILL.md`
 Investigate an organization's public presence outside its own website, resolving identity before attribution and separating observations from claims.
 
 Location: `.agents/skills/research_external_presence/SKILL.md`
+
+## Communicate Findings
+
+Transform validated research, evidence, and open questions into clear, decision-oriented communication for AMC representatives without altering epistemic status.
+
+Location: `.agents/skills/communicate_findings/SKILL.md`
