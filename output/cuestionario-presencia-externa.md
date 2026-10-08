@@ -22,10 +22,10 @@ communication:
     - "Confirmación sobre el estado de acceso o administración de la ficha comercial en Google Business Profile."
 
   source_inputs:
-    - "SRC-001 (Directorios mercantiles: sedes en Carrera 14 Edificio Ágora y Perlo)"
-    - "SRC-002 (Informe de gestión Uribia 2023: contrato SAMC-014-2023 por $198.5M COP)"
-    - "SRC-003 (Google Maps: ausencia de ficha verificada observable en Valledupar)"
-    - "SRC-004 (LinkedIn: ausencia de página corporativa activa en muestra evaluada)"
+    - "SRC-001 (Directorios comerciales privados: sedes en Carrera 14 Edificio Ágora y Perlo)"
+    - "SRC-002 (Informe de gestión Uribia 2023 en PDF: contrato SAMC-014-2023 por $198.5M COP)"
+    - "SRC-003 (Muestra SERP orientada a Google Maps: ausencia de ficha verificada observable en Valledupar)"
+    - "SRC-004 (Muestra SERP orientada a LinkedIn: ausencia de página corporativa en muestra evaluada)"
 
   constraints:
     language: "es"
@@ -46,26 +46,26 @@ El propósito de este cuestionario es contrastar la información pública dispon
 ## Preguntas Prioritarias
 
 ### 1. Sedes físicas y atención presencial en Valledupar
-En el sitio web oficial se presenta la sede en el Barrio Arizona (`Carrera 19d # 5-50`), mientras que en los registros mercantiles consultados figuran oficinas en la `Carrera 14 # 13 C 60 (Edificio Ágora)` y `Carrera 14 # 13 B Bis 54 (Edificio Perlo)`.
+En el sitio web oficial se presenta la sede en el Barrio Arizona (`Carrera 19d # 5-50`), mientras que en directorios empresariales consultados figuran oficinas en la `Carrera 14 # 13 C 60 (Edificio Ágora)` y `Carrera 14 # 13 B Bis 54 (Edificio Perlo)`.
 
 > **Para efectos de atención a clientes y correspondencia comercial en Valledupar:**  
-> ¿Cuál de estas ubicaciones funciona actualmente como la sede principal operativa de AMC, y qué rol cumplen hoy las oficinas de la Carrera 14 (sedes activas complementarias o direcciones históricas)?
+> Cuando un cliente, aliado o entidad requiere reunirse presencialmente con el equipo o remitir correspondencia física, ¿a qué sede acuden habitualmente y qué función operativa cumplen hoy las oficinas de la Carrera 14?
 
 ---
 
 ### 2. Alcance y prioridad de la contratación pública
-En registros gubernamentales territoriales se identificó la adjudicación del contrato de control y seguimiento minero en el municipio de Uribia (La Guajira, vigencia 2023), estrechamente vinculado a las capacidades de fiscalización y trámites RUCOM que ofrece AMC.
+En registros gubernamentales territoriales se identificó la adjudicación del contrato de control y seguimiento minero en el municipio de Uribia (La Guajira, vigencia fiscal 2023), estrechamente vinculado a las capacidades técnicas de formalización minera y RUCOM que ofrece AMC.
 
-> **Dentro de la actividad comercial de AMC:**  
-> ¿Qué rol cumple la contratación técnica con entidades del sector público territorial dentro de los servicios de AMC, y cómo se relaciona con sus líneas de trabajo habituales para clientes del sector privado?
+> **Dentro del modelo de servicios y captación de AMC:**  
+> ¿Qué papel juega la contratación técnica con entidades del sector público dentro de la actividad habitual de la empresa, y cómo se articula con los servicios prestados a titulares y compañías del sector privado?
 
 ---
 
 ### 3. Localización digital y gestión de Google Maps
-Al examinar la presencia territorial en mapas digitales para búsquedas locales en Valledupar, no se observa una ficha comercial verificada o reclamada en Google Business Profile asociada directamente a AMC Solutions.
+Al examinar la presencia territorial en búsquedas web orientadas a mapas para Valledupar, no se observa una ficha comercial verificada o reclamada en Google Business Profile asociada directamente a AMC Solutions.
 
 > **En el día a día comercial de la empresa:**  
-> Cuando una empresa o profesional de la región busca la oficina o los servicios de AMC en Google, ¿cuentan internamente con una ficha de Google Maps administrada por el equipo, o la llegada de prospectos y visitas ocurre principalmente por contacto telefónico y referencias directas?
+> Cuando una empresa o profesional de la región busca los servicios o la oficina de AMC en Google, ¿cuentan internamente con una ficha de Google Maps administrada por el equipo (en proceso de validación o con otro nombre), o la llegada de prospectos y visitas ocurre principalmente por contacto telefónico y referencias directas?
 
 ---
 

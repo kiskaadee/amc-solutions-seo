@@ -15,6 +15,8 @@ Tests behavioral robustness and epistemic enforcement across 12 adversarial fixt
 11. Conflicting proposed anchor -> rejected by orchestrator, not promoted to active
 12. Temporal Exploit & Re-entry -> auditor catches 2023 source claimed as 2026, demotes to hold,
     worker corrects temporal scope, re-enters pending, auditor passes candidate.
+13. Metadata claim without observation -> auditor catches discard claiming tax_id conflict
+    without empirical NIT in direct_observations, worker remediates to verified anchors.
 """
 
 from typing import Dict, Any, List, Tuple
@@ -66,6 +68,13 @@ class EvidenceAuditor:
                 return False, "Candidate kind is discard but disposition is not discard"
             if not candidate.get("conflicting_anchors"):
                 return False, "Discard candidate must document conflicting anchors"
+            
+            # Epistemic check: metadata claim without observational backing
+            direct_obs_text = " ".join(candidate.get("direct_observations", [])).lower()
+            for conflict in candidate.get("conflicting_anchors", []):
+                if conflict == "tax_id" and not any(k in direct_obs_text for k in ["nit", "tax_id", "tributaria"]):
+                    return False, "Metadata claim without observation: 'tax_id' declared in conflicting_anchors but no NIT recorded in direct_observations"
+
             return True, "Discard verified by conflicting anchors"
 
         # Check Negative Observations
@@ -131,7 +140,8 @@ def run_all_adversarial_tests():
     c1 = {
         "id": "ADV-001", "candidate_kind": "discard", "identity_status": "discarded",
         "disposition": "discard", "audit_status": "pending",
-        "conflicting_anchors": ["tax_id"], "matched_anchors": ["ANC-003"]
+        "conflicting_anchors": ["tax_id"], "matched_anchors": ["ANC-003"],
+        "direct_observations": ["Entidad homónima con NIT 900999888 en conflicto con semilla"]
     }
     raw1 = {"name": "AMC SOLUTIONS COLOMBIA S.A.S.", "nit": "900999888"}
     passed, reason = auditor.audit_candidate(c1, raw1)
@@ -298,6 +308,27 @@ def run_all_adversarial_tests():
     assert eligible
     results["12. Temporal exploit & re-entry"] = "PASS (auditor caught 2026 leap, demoted to hold; worker repaired, re-entered, passed audit)"
 
+    # Fixture 13: Metadata claim without observation (DISC-001 regression fixture)
+    bad_c13 = {
+        "id": "ADV-013", "candidate_kind": "discard", "identity_status": "discarded",
+        "disposition": "discard", "audit_status": "pending",
+        "conflicting_anchors": ["tax_id", "city"],
+        "direct_observations": ["Ficha en Bogotá para empresa homónima en alquiler de maquinaria"]
+    }
+    passed_bad, reason_bad = auditor.audit_candidate(bad_c13, {})
+    assert not passed_bad and "metadata claim without observation" in reason_bad.lower()
+
+    # Re-entry: Worker remediates by grounding discard strictly on verifiable conflicting anchors (city, sector)
+    remediated_c13 = {
+        "id": "ADV-013", "candidate_kind": "discard", "identity_status": "discarded",
+        "disposition": "discard", "audit_status": "pending",
+        "conflicting_anchors": ["city", "industry_sector"],
+        "direct_observations": ["Ficha mercantil en Bogotá (Calle 74) con actividad CIIU 7730 (alquiler de maquinaria)"]
+    }
+    passed_good, reason_good = auditor.audit_candidate(remediated_c13, {})
+    assert passed_good and remediated_c13["disposition"] == "discard"
+    results["13. Metadata claim without observation"] = "PASS (auditor caught unsupported tax_id assertion; remediated to verified anchors)"
+
     return results
 
 
@@ -309,4 +340,4 @@ if __name__ == "__main__":
     for test_name, outcome in test_results.items():
         print(f"[{outcome.split()[0]}] {test_name}: {outcome}")
     print("=" * 70)
-    print("ALL 12 ADVERSARIAL TESTS PASSED WITHOUT EPISTEMIC DRIFT.")
+    print("ALL 13 ADVERSARIAL TESTS PASSED WITHOUT EPISTEMIC DRIFT.")
