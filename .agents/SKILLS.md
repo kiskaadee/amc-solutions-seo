@@ -17,3 +17,9 @@ Location: `.agents/skills/record_evidence/SKILL.md`
 Interactive verification of evidence comprehension and epistemic discipline.
 
 Location: `.agents/skills/review_findings/SKILL.md`
+
+## Research External Presence
+
+Investigate an organization's public presence outside its own website, resolving identity before attribution and separating observations from claims.
+
+Location: `.agents/skills/research_external_presence/SKILL.md`
