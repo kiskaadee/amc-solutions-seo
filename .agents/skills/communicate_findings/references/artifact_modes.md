@@ -9,9 +9,14 @@ Standardize communication formats to match stakeholder interaction scenarios.
 All artifacts follow the progressive disclosure pattern:
 
 1. **Human-readable conclusion:** Clear summary of the observation or status in plain language.
-2. **Business relevance:** Explanation of why this matters for AMC's operations, prospects, or presence.
+2. **Business relevance (Subordinate to evidence):** Explanation of why this matters for AMC. Must be either:
+   - directly supported by the project objective, or
+   - explicitly framed as a question or potential implication.
+   Never assert an operational, commercial, or strategic consequence merely because it sounds plausible (e.g. claiming without evidence that an address discrepancy causes customer loss).
 3. **Bounded technical context:** Optional, minimal technical references needed for clarity.
-4. **Source traceability and gaps:** Explicit reference to evidence records (`OBS-xxx`) and remaining uncertainties.
+4. **Source traceability and gaps:**
+   - *Internal artifact metadata:* Explicit reference to evidence records (`OBS-xxx`, audited `SRC-xxx`), question-to-uncertainty mappings, and provenance.
+   - *Stakeholder presentation:* Human-readable source context in natural language; omit internal repository identifiers (`OBS-xxx`, `SRC-xxx`) unless specifically requested.
 
 ---
 
@@ -40,9 +45,9 @@ All artifacts follow the progressive disclosure pattern:
 - **Use when:** Requesting operational details or workflow clarifications from AMC.
 - **Structure:**
   1. *Contexto del requerimiento:* One short paragraph explaining the purpose.
-  2. *Preguntas prioritarias:* 2 to 4 structured questions focused on actual workflows.
+  2. *Preguntas prioritarias:* 2 to 4 structured questions focused on actual workflows and answerable by stakeholders.
   3. *Forma de respuesta esperada:* Instructions on how to respond (written, voice note, or brief call).
-- **Rule:** Never exceed 5 questions in a single touchpoint. Avoid yes/no dead ends.
+- **Rule:** Never exceed 5 questions in a single touchpoint. Avoid forcing stakeholders into researcher categories.
 
 ### 4. `meeting_brief`
 - **Use when:** Preparing an agenda or discussion outline for a live conversation with AMC.
@@ -66,6 +71,6 @@ All artifacts follow the progressive disclosure pattern:
 - **Use when:** Communicating an individual discovery item or critical observation.
 - **Structure:**
   1. *Situación observada:* Plain statement of what was found.
-  2. *Implicación práctica:* How it affects potential clients or search visibility.
+  2. *Implicación práctica:* How it affects potential clients or search visibility (grounded or framed as question).
   3. *Verificación requerida:* Question or confirmation needed from AMC.
 - **Rule:** Keep strictly focused on a single topic or page area.

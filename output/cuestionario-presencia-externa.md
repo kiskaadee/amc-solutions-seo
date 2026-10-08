@@ -56,8 +56,8 @@ En el sitio web oficial se presenta la sede en el Barrio Arizona (`Carrera 19d #
 ### 2. Alcance y prioridad de la contratación pública
 En registros gubernamentales territoriales se identificó la adjudicación del contrato de control y seguimiento minero en el municipio de Uribia (La Guajira, vigencia 2023), estrechamente vinculado a las capacidades de fiscalización y trámites RUCOM que ofrece AMC.
 
-> **Dentro de la estrategia comercial actual de AMC:**  
-> ¿La contratación técnica con entidades públicas y alcaldías representa una línea de negocio recurrente que desean visibilizar y posicionar en internet, o su foco prioritario de captación está dirigido exclusivamente a empresas y titulares privados del sector minero-ambiental?
+> **Dentro de la actividad comercial de AMC:**  
+> ¿Qué rol cumple la contratación técnica con entidades del sector público territorial dentro de los servicios de AMC, y cómo se relaciona con sus líneas de trabajo habituales para clientes del sector privado?
 
 ---
 

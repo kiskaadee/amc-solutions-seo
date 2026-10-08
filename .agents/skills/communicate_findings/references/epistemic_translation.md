@@ -4,6 +4,61 @@
 
 Bridge technical observations and stakeholder communication without degrading epistemic discipline or inventing missing facts.
 
+## Governing Invariant
+
+The communication layer may transform the presentation of knowledge, but it may never transform its epistemic status.
+
+### Forbidden Epistemic Transformations
+
+| Transformation | Status | Rule |
+| :--- | :---: | :--- |
+| `unknown -> fact` | **FORBIDDEN** | A gap in research cannot be filled with plausible assumptions. |
+| `hypothesis -> finding` | **FORBIDDEN** | An untested explanation cannot be stated as an established result. |
+| `source claim -> verified fact` | **FORBIDDEN** | What a third party states must not be asserted as verified truth without corroboration. |
+| `historical -> current` | **FORBIDDEN** | Evidence from past periods (e.g. 2023 contract) cannot be asserted as current reality. |
+| `absence observed -> absolute absence` | **FORBIDDEN** | Lack of profile in a sample cannot be asserted as total non-existence. |
+| `pending / unaudited -> canonical` | **FORBIDDEN** | Unaudited candidate findings cannot be introduced as established facts. |
+
+---
+
+## Communication Truth vs. Communication Framing
+
+Communication framing may change; epistemic status may not.
+
+- **Truth (Invariant):** What the evidence directly establishes (e.g. two public sources show different addresses).
+- **Framing (Purposeful adaptation):** How that truth is contextualized to achieve the communication goal without introducing unevidenced assertions.
+
+| Framing Variant | Example | Status | Rationale |
+| :--- | :--- | :---: | :--- |
+| **Discrepancy report** | "Encontramos información contradictoria sobre la dirección en registros públicos..." | **Valid** | Accurately describes the empirical discrepancy. |
+| **Operational clarification** | "Queremos confirmar cuál es actualmente la dirección principal de AMC..." | **Valid** | Focuses communication on the current operational reality. |
+| **Unevidenced assertion** | "La información pública de AMC está desactualizada y genera desconfianza." | **FORBIDDEN** | Asserts unverified causes and negative impacts not in evidence. |
+
+---
+
+## Subordinating Business Relevance to Evidence
+
+Business relevance must be either:
+1. Directly supported by the project objective, or
+2. Explicitly framed as a question or potential implication.
+
+Never introduce an operational, commercial, or strategic consequence merely because it sounds plausible.
+- *Unsafe claim:* "La inconsistencia de direcciones está haciendo que AMC pierda clientes y oportunidades."
+- *Epistemically sound:* "Necesitamos confirmar cuál es la dirección principal para mantener consistente la información pública de la empresa en los mapas y el sitio web."
+
+---
+
+## Handling AMC Responses
+
+A response from an AMC representative is a first-party source claim unless independently established otherwise. The communication skill must never convert a stakeholder response directly into canonical institutional fact.
+
+Responses pass to `record_evidence` to receive:
+1. First-party provenance and capture date.
+2. Explicit temporal scope (current reality, historical practice, or future plan).
+3. Corroboration evaluation: evaluate corroboration before presenting the response as independently established fact. An uncorroborated response remains an admissible first-party source claim with explicit provenance and temporal scope.
+
+---
+
 ## Information Selection Taxonomy
 
 Before drafting, classify each candidate piece of information from internal research:
@@ -16,39 +71,3 @@ Before drafting, classify each candidate piece of information from internal rese
 | **DISTRACTING** | Implementation trivia irrelevant to AMC's decision | Omit entirely |
 | **INTERNAL_ONLY** | Scaffolding, tooling signatures, crawler paths | Omit entirely |
 | **UNSAFE_TO_ASSERT** | Unverified inference, speculation, or unproven gap | State as uncertainty or omit |
-
-### Examples of Classification
-
-- *Internal observation:* "Server header exposes Apache/2.4.52 and PHP/8.2.34."
-  - For general progress update: **DISTRACTING** or **INTERNAL_ONLY** (omit).
-  - For hosting security audit: **REQUIRED**.
-- *Internal observation:* "Missing JSON-LD structured data."
-  - For business progress update: **DISTRACTING** in technical form; reframe as "El sitio no contiene actualmente marcas estructuradas que faciliten a los buscadores identificar los servicios" if SEO visibility is the topic.
-- *Internal observation:* "Contact page displays plain text phone and email, no direct click links or forms."
-  - For inquiry on lead workflow: **REQUIRED**.
-
----
-
-## Epistemic Rules for Communication
-
-### 1. Never Promote Epistemic Status
-- A fact remains a fact: strictly bounded by what was inspected.
-- An interpretation remains an interpretation: never present an inference as an established fact.
-- A hypothesis remains a hypothesis: present as a question or validation point, never as a conclusion.
-
-### 2. Differentiate Technical Translation from Communication
-Mechanical translation of jargon into Spanish is insufficient. Evaluate whether the concept itself matters to the recipient.
-- *Negative example:* Translating "Canonical link is missing" to "Falta el enlace canónico". (AMC does not need the term unless they maintain the site).
-- *Communicated form:* "Algunas páginas no indican formalmente a los buscadores cuál es la versión principal de su dirección web."
-
-### 3. Bound Negative Findings
-Absence of evidence is not evidence of absence.
-- *Internal observation:* "No contact forms or CRM tracking scripts detected on `/contacto/`."
-- *Unsafe claim:* "AMC does not have a CRM system or lead management process."
-- *Epistemically sound communication:* "El sitio web no muestra formularios ni herramientas visibles de registro. Queremos consultar con AMC cómo reciben y gestionan internamente las solicitudes de contacto que llegan desde la página."
-
-### 4. Separate Observation from Client Perception
-Never assume how visitors react based solely on HTML structure.
-- *Internal observation:* "Service pages contain bullet lists without descriptive text."
-- *Unsafe claim:* "Potential clients cannot understand what AMC does."
-- *Epistemically sound communication:* "Las páginas de servicios presentan actualmente listas puntuales sin descripciones detalladas. Deseamos confirmar con AMC si esta presentación es suficiente para sus prospectos o si convendría ampliar la explicación de sus capacidades clave."

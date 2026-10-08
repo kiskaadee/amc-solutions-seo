@@ -4,6 +4,31 @@
 
 Establish the operational context for any communication artifact before writing. Every external document must answer to an explicit immediate goal and the broader discovery phase.
 
+## Governing Invariant
+
+The communication layer may transform the presentation of knowledge, but it may never transform its epistemic status.
+
+---
+
+## Input Contract
+
+Before populating a brief, verify that all source inputs satisfy the input contract:
+
+### Admissible Inputs
+- Canonical evidence records in `evidence/`.
+- Audited research findings where `disposition: admit` AND `audit_status: passed`.
+- Bounded open questions derived from audited findings.
+- Verified seed identifiers and project context.
+
+### Forbidden Inputs (Must not be asserted as facts)
+- Pending candidates (`audit_status: pending`).
+- Worker-admitted but unaudited findings.
+- Proposed anchors (`anchor_state.proposed`).
+- Discarded candidates or spurious homonyms.
+- Unverified inferences or speculative interpretations.
+
+---
+
 ## Brief Schema
 
 ```yaml
@@ -28,7 +53,7 @@ communication:
     - "<Specific response, decision, or information expected from AMC>"
 
   source_inputs:
-    - "<Evidence files, observation IDs, or open questions referenced>"
+    - "<Canonical evidence files (e.g. OBS-xxx) or audited candidates (SRC-xxx)>"
 
   constraints:
     language: "es"

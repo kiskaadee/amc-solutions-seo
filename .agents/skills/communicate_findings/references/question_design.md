@@ -21,33 +21,43 @@ Ask about actual operational workflows and business priorities, not software too
 
 ---
 
-## Question Archetypes
+## Internal Question Architecture
 
-### 1. Process Mapping
-Uncovers what happens when a user crosses from external observer to active prospect.
-- *Template:* "Cuando ocurre [evento en el sitio], ¿qué proceso operativo se activa internamente para [atender / resolver / responder]?"
+Stakeholders receive concise, human-readable prose. Internally, the research system must maintain the structural link between the question, the evidence, and the downstream decision:
 
-### 2. Prioritization and Activity
-Validates whether site representation matches corporate reality.
-- *Template:* "En la sección de [área o servicio], encontramos [elementos observados]. ¿Cuáles de estos corresponden a las líneas de servicio con mayor demanda actual en AMC?"
+```yaml
+question:
+  text: "¿Cuál es actualmente la sede principal de atención de AMC en Valledupar?"
+  evidence_basis:
+    - "SRC-001"
+  unresolved_uncertainty:
+    - "Vigencia operativa de sedes en Carrera 14 frente a Carrera 19d"
+  decision_dependency:
+    - "Modelado de presencia local (NAP) y arquitectura de canales de contacto"
+  anticipated_answer_classes:
+    - "Carrera 19d es la única sede comercial y operativa activa"
+    - "Carrera 14 sigue operando como sede administrativa"
+    - "Ambas sedes tienen funciones diferenciadas activas"
+    - "Otra ubicación no contemplada"
+```
 
-### 3. Channel Expectation
-Verifies how the organization expects prospects to bridge into direct conversation.
-- *Template:* "Actualmente, ¿por cuál medio reciben con mayor frecuencia las primeras consultas de nuevos clientes (llamada, correo, referencias directas)?"
+*Note on anticipated answer classes:* These are planning hypotheses, not an exhaustive answer set. The stakeholder's response must be accepted even when it does not fit the anticipated classes.
 
-### 4. Decision Role
-Identifies the profile of the human buyer evaluating AMC's capabilities.
-- *Template:* "Cuando un cliente potencial evalúa contratar los servicios de [especialidad], ¿qué perfil dentro de su empresa suele revisar las credenciales técnicas?"
+This mapping prevents asking locally interesting questions that do not reduce core project uncertainties.
 
 ---
 
 ## Design Checklist
 
-Before sending questions to AMC:
+Before sending questions to AMC, verify:
 
 - [ ] Does this question inquire about a real workflow rather than a tool name?
 - [ ] Is it free of internal technical jargon (e.g. JSON-LD, canonical, CMS, CTA)?
 - [ ] Does it avoid assuming problems AMC has not confirmed?
 - [ ] Is it open-ended enough to prevent a simple yes/no response?
-- [ ] Does answering it directly reduce a core project uncertainty?
+- [ ] Can AMC reasonably answer this without consulting technical systems?
+- [ ] Does the question distinguish current, historical, and planned states when relevant?
+- [ ] Would different answers materially change the next research step?
+- [ ] Does the question avoid forcing AMC into categories created by the researcher (opens the model rather than imposing preconceived options)?
+- [ ] Does answering it directly reduce an audited project uncertainty?
 - [ ] Is the question set limited to 2-4 items?
