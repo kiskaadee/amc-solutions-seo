@@ -11,3 +11,9 @@ Location: `.agents/skills/write_documentation/SKILL.md`
 Guidelines for collecting and recording evidence.
 
 Location: `.agents/skills/record_evidence/SKILL.md`
+
+## Review Findings
+
+Interactive verification of evidence comprehension and epistemic discipline.
+
+Location: `.agents/skills/review_findings/SKILL.md`
