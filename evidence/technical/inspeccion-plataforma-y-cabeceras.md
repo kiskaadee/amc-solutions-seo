@@ -4,7 +4,7 @@ Registro de evidencia técnica obtenido mediante inspección automatizada de red
 
 - **Fecha de captura:** 2026-10-07 22:47:51 UTC
 - **URL objetivo:** `https://www.amcsolutionscolombia.com/`
-- **Herramienta:** `tools/inspect_site.py`
+- **Herramienta:** [`tools/inspect_site.py`](../../tools/inspect_site.py)
 - **Fuente cruda:** `tools/raw/2026-10-07_22-47-51/`
 
 ---

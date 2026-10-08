@@ -1,58 +1,65 @@
-# Preguntas para AMC
+# Preguntas de Descubrimiento para AMC Solutions
 
-## Ejes de Conversación
-
-```text
-1. ¿Qué vende AMC en la práctica?
-          │
-          ▼
-2. ¿Quién lo compra y quién decide?
-          │
-          ▼
-3. ¿Por qué eligen a AMC frente a otros?
-          │
-          ▼
-4. ¿Cómo descubren o llegan hoy a AMC?
-          │
-          ▼
-5. ¿Hacia dónde y en qué servicios quieren crecer?
-          │
-          ▼
-6. ¿Qué función concreta debe cumplir el sitio web?
-          │
-          ▼
-7. ¿Cómo definen el éxito del proyecto a 6 meses?
-```
+Banco de preguntas estructurado a partir de la evidencia técnica y de contenido recolectada en el sitio web ([OBS-001 a OBS-005](../evidence/technical/inspeccion-plataforma-y-cabeceras.md), [OBS-006 a OBS-009](../evidence/website/inventario-portada-y-enlaces.md), [OBS-010 a OBS-012](../evidence/website/paginas-servicios-y-contacto.md), [OBS-013 a OBS-015](../evidence/website/paginas-tramites-mineros.md)). Diseñado para resolver vacíos empíricos y entender la operación comercial real de la empresa antes de formular diagnósticos o propuestas.
 
 ---
 
-## Preguntas por Tema
+## 1. Modelo Comercial y Portafolio Activo
 
-### Modelo de Negocio y Servicios
-1. **Facturación (80/20):** ¿Cuáles 2 o 3 servicios representan el 80% del flujo de caja actual (trámites ante Corpocesar/ANLA, geología, diseño de mina, interventoría)?
-2. **Prioridades de expansión:** ¿Qué servicios buscan expandir durante los próximos 12–18 meses? ¿Existen servicios en la web actual que ya no ofrecen?
-3. **Modalidad de contratación:** ¿Los clientes contratan acompañamiento integral por fases del proyecto o servicios puntuales para resolver trámites regulatorios aislados?
+*Evidencia relacionada: [OBS-007](../evidence/website/inventario-portada-y-enlaces.md#obs-007-enlaces-a-páginas-de-servicios), [OBS-008](../evidence/website/inventario-portada-y-enlaces.md#obs-008-enlaces-a-páginas-de-trámites-mineros), [OBS-011](../evidence/website/paginas-servicios-y-contacto.md#obs-011-contenido-y-estructura-en-páginas-de-servicios), [OBS-013](../evidence/website/paginas-tramites-mineros.md#obs-013-modelo-de-contenido-explicativo-y-referencias-normativas).*
 
-### Clientes y Proceso de Compra
-1. **Perfil del decisor:** En el cliente típico, ¿quién toma la decisión final (titulares de concesión, directores de sostenibilidad, asesores jurídicos, ingenieros jefes)?
-2. **Ámbito geográfico:** ¿El mercado activo está en Valledupar y el Cesar, en la Región Caribe, a nivel nacional o con empresas extranjeras?
-3. **Ciclo de venta:** ¿Cuánto tiempo transcurre entre el primer contacto y la firma del contrato?
+1. **Portafolio real vs. estructura web:** En la web aparecen 5 categorías de servicios (`/servicios-*/`) y 9 páginas dedicadas a trámites mineros de la ANM. En la práctica comercial:
+   - ¿Cuáles 2 o 3 líneas de servicio representan el 80% de la facturación de AMC?
+   - ¿Los trámites mineros (RUCOM, liquidación de regalías, formalización, FBM) son servicios independientes que cobran por separado o forman parte de contratos marco más amplios?
+2. **Servicios Empresariales ([OBS-011](../evidence/website/paginas-servicios-y-contacto.md#obs-011-contenido-y-estructura-en-páginas-de-servicios)):** La página `/servicios-empresariales/` no contiene texto ni servicios listados.
+   - ¿Qué alcance contempla esta línea de negocio? ¿Se encuentra activa, en desarrollo o ya no forma parte de la oferta?
+3. **Cualificación del cliente:** En la web, 4 páginas de servicios solo listan viñetas de nombres técnicos sin explicaciones.
+   - Cuando un prospecto se comunica por primera vez, ¿llega sabiendo con precisión qué servicio o trámite necesita, o el equipo comercial debe orientarlo y educarlo desde cero?
 
-### Ventas y Captación Comercial
-1. **Prospecto calificado:** ¿Qué define una oportunidad comercial real para AMC (mensaje por WhatsApp, solicitud formal de cotización, llamada)?
-2. **Rol actual del sitio web:** ¿Ha recibido AMC solicitudes comerciales efectivas a través del sitio web actual?
+---
 
-### Diferencial y Percepción de Marca
-1. **Factor decisivo:** ¿Por qué un cliente elige a AMC frente a otra firma de ingeniería o consultoría (tiempo de respuesta, conocimiento del territorio local, solvencia técnica, relaciones institucionales)?
-2. **Tono y mensaje:** ¿Qué impresión debe transmitir el sitio web en una primera visita (institucional y técnico, ágil e innovador, aliado estratégico cercano)?
-3. **Referencias sectoriales:** ¿Qué 2 o 3 sitios web del sector (en Colombia o internacionalmente) consideran referentes positivos de diseño o autoridad?
+## 2. Captación, Canales y Flujo de Cotización
 
-### Infraestructura Técnica y Datos
-1. **Accesos:** ¿Quién desarrolló el sitio web actual? ¿Dispone AMC de credenciales de acceso a CMS, hosting y DNS?
-2. **Analítica:** ¿Está configurado Google Analytics 4, Search Console o Tag Manager? ¿Es posible revisar el historial de consultas y visitas?
-3. **Historial de pauta:** ¿Ha realizado AMC campañas en Google Ads o redes sociales en el pasado? Si fue así, ¿cuáles fueron los resultados?
+*Evidencia relacionada: [OBS-009](../evidence/website/inventario-portada-y-enlaces.md#obs-009-enlaces-de-contacto-en-la-portada), [OBS-010](../evidence/website/paginas-servicios-y-contacto.md#obs-010-datos-de-contacto-y-canales-en-página-de-contacto), [OBS-014](../evidence/website/paginas-tramites-mineros.md#obs-014-enlaces-de-llamada-a-la-acción-cta-hacia-contacto).*
 
-### Alcance y Continuidad del Proyecto
-1. **Criterios de éxito:** ¿Qué resultado concreto a 6 meses del lanzamiento evidenciará que el proyecto cumplió su objetivo?
-2. **Mantenimiento y contenidos:** Tras el lanzamiento, ¿quién asumirá la actualización de contenidos y la atención de solicitudes entrantes?
-3. **Plazos y presupuesto:** ¿Qué marco temporal y nivel de inversión contempla la empresa para esta iniciativa?
+1. **Atribución de canales:** La página `/contacto/` expone tres números celulares, un correo y una dirección física en texto plano, sin formularios interactivos ni enlaces directos:
+   - Cuando reciben llamadas o correos, ¿tienen algún mecanismo o protocolo para identificar si el contacto proviene de una búsqueda en Google, del sitio web o de una referencia personal?
+   - De los tres números de celular listados, ¿a quién corresponden las líneas (gerencia, área comercial, soporte técnico)?
+2. **Efectividad del llamado a cotizar ([OBS-014](../evidence/website/paginas-tramites-mineros.md#obs-014-enlaces-de-llamada-a-la-acción-cta-hacia-contacto)):** Páginas como *Liquidación de Regalías* o *Propuestas de Concesión* invitan al usuario a «Cotizar aquí su trámite», enviándolo a `/contacto/`:
+   - ¿Reciben habitualmente solicitudes de cotización originadas a partir de estas páginas temáticas?
+   - ¿Han detectado fricción o abandono en prospectos que prefieren no llamar y buscan cotizar de forma directa por mensajería o formulario?
+
+---
+
+## 3. Clientes y Proceso de Decisión (B2B)
+
+*Evidencia relacionada: [OBS-013](../evidence/website/paginas-tramites-mineros.md#obs-013-modelo-de-contenido-explicativo-y-referencias-normativas).*
+
+1. **Perfil del comprador:** Las páginas citan normativas de alta especificidad técnica y legal:
+   - ¿Quién es el interlocutor habitual que toma la decisión de contratación (titulares de concesión, directores de sostenibilidad, asesores jurídicos de empresas mineras, pequeños mineros en proceso de formalización)?
+2. **Ámbito geográfico y territorio:** La sede física declarada está en Valledupar (Cesar):
+   - ¿El mercado activo de AMC se concentra en el departamento del Cesar y la Región Caribe, o ejecutan proyectos a escala nacional?
+3. **Ciclo de venta:** ¿Cuánto tiempo promedio transcurre desde la primera consulta sobre un trámite o estudio ambiental/geológico hasta el cierre del contrato?
+
+---
+
+## 4. Infraestructura Técnica, Accesos y Datos
+
+*Evidencia relacionada: [OBS-001](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-001-servidor-y-cms-wordpress), [OBS-003](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-003-metadatos-y-datos-estructurados-en-portada), [OBS-004](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-004-presencia-de-scripts-de-analítica-en-portada), [OBS-012](../evidence/website/paginas-servicios-y-contacto.md#obs-012-consistencia-de-metadatos-y-analítica-en-páginas-interiores), [OBS-015](../evidence/website/paginas-tramites-mineros.md#obs-015-estado-de-metadatos-y-analítica-en-páginas-de-trámites).*
+
+1. **Propiedad y administración de la plataforma:**
+   - La inspección técnica constató que el sitio opera en WordPress 7.1.3 bajo Apache y PHP 8.2.34. ¿Quién gestiona actualmente el hosting, las copias de seguridad y las actualizaciones del CMS?
+   - ¿Dispone AMC de credenciales de acceso administrativo al panel de WordPress, al servidor de hosting y al proveedor de DNS?
+2. **Telemetría y analítica:**
+   - No se detectaron etiquetas de Google Analytics, Tag Manager ni metadatos de seguimiento en ninguna página del sitio. ¿Existe alguna propiedad configurada en Google Search Console a nivel de dominio, o acceso a los registros (logs) del servidor web?
+3. **Campañas previas:**
+   - ¿Ha ejecutado AMC pauta digital previa (Google Ads, redes sociales) hacia alguna de las URLs del sitio?
+
+---
+
+## 5. Expectativas y Definición de Éxito
+
+1. **Objetivo prioritario del canal digital:**
+   - ¿Qué función concreta debe cumplir la presencia digital para AMC en los próximos 12 meses: generar prospectos comerciales cualificados, actuar como carta de presentación y respaldo institucional ante licitaciones, o educar al sector minero sobre normativas?
+2. **Criterio de éxito:**
+   - ¿Qué indicador observable a 6 meses le confirmará a la dirección de AMC que la presencia digital está cumpliendo su propósito?

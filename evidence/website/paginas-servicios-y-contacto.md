@@ -10,7 +10,7 @@ Registro de observaciones obtenidas mediante inspección técnica de las página
   - `https://www.amcsolutionscolombia.com/servicios-empresariales/`
   - `https://www.amcsolutionscolombia.com/servicios-geologicos/`
   - `https://www.amcsolutionscolombia.com/servicios-mineros/`
-- **Herramienta:** `tools/inspect_internal_pages.py`
+- **Herramienta:** [`tools/inspect_internal_pages.py`](../../tools/inspect_internal_pages.py)
 - **Fuente cruda:** `tools/raw/2026-10-08_01-43-44/`
 
 ---

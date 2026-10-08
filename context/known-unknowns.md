@@ -34,8 +34,11 @@
 
 ### Infraestructura Web
 - ¿Qué plataforma sustenta el sitio y quién gestiona accesos a hosting, CMS y DNS?
+  - *Evidencia parcial:* Plataforma identificada en [OBS-001](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-001-servidor-y-cms-wordpress) (WordPress 7.1.3 bajo Apache y PHP 8.2.34). Permanece abierta la administración del hosting y DNS.
 - ¿Existen herramientas de analítica configuradas (GA4, Search Console) y datos históricos de tráfico?
+  - *Evidencia parcial:* Ausencia de scripts en el cliente verificada en [OBS-004](../evidence/technical/inspeccion-plataforma-y-cabeceras.md#obs-004-presencia-de-scripts-de-analítica-en-portada), [OBS-012](../evidence/website/paginas-servicios-y-contacto.md#obs-012-consistencia-de-metadatos-y-analítica-en-páginas-interiores) y [OBS-015](../evidence/website/paginas-tramites-mineros.md#obs-015-estado-de-metadatos-y-analítica-en-páginas-de-trámites). Permanece abierta la existencia de propiedad Search Console o logs del servidor.
 - ¿Existe seguimiento de conversiones (clics a WhatsApp, formularios, llamadas)?
+  - *Evidencia parcial:* Canales publicados en texto plano sin enlaces de llamada/mensaje ni formularios ([OBS-009](../evidence/website/inventario-portada-y-enlaces.md#obs-009-enlaces-de-contacto-en-la-portada) y [OBS-010](../evidence/website/paginas-servicios-y-contacto.md#obs-010-datos-de-contacto-y-canales-en-página-de-contacto)).
 - ¿Cuáles páginas concentran el mayor tráfico actualmente?
 
 ### Marca
