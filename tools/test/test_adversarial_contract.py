@@ -6,17 +6,22 @@ Tests behavioral robustness and epistemic enforcement across 12 adversarial fixt
 2. Correct NIT + different legal name -> hold / ambiguous
 3. Historical address -> admit presence + proposed anchor (historical period)
 4. New legal representative -> admit presence + proposed anchor
-5. Search snippet vs. underlying page discrepancy -> page governs observation, snippet discarded
-6. Unsupported promotional claim -> source_claims only, rejected if in direct_observations
+5. Search snippet vs. underlying page discrepancy -> page governs observation,
+   snippet discarded
+6. Unsupported promotional claim -> source_claims only,
+   rejected if in direct_observations
 7. Ambiguous local listing -> hold (missing tax_id / domain)
-8. Historical government contract -> admit with strict temporal validity, no present-tense leap
+8. Historical government contract -> admit with strict temporal validity,
+   no present-tense leap
 9. Negative observation on map platform -> negative_observation, not_applicable identity
 10. Contradictory addresses -> contradiction preserved in open_questions
 11. Conflicting proposed anchor -> rejected by orchestrator, not promoted to active
-12. Temporal Exploit & Re-entry -> auditor catches 2023 source claimed as 2026, demotes to hold,
-    worker corrects temporal scope, re-enters pending, auditor passes candidate.
-13. Metadata claim without observation -> auditor catches discard claiming tax_id conflict
-    without empirical NIT in direct_observations, worker remediates to verified anchors.
+12. Temporal Exploit & Re-entry -> auditor catches 2023 source claimed as 2026,
+    demotes to hold, worker corrects temporal scope, re-enters pending,
+    auditor passes candidate.
+13. Metadata claim without observation -> auditor catches discard claiming
+    tax_id conflict without empirical NIT in direct_observations,
+    worker remediates to verified anchors.
 """
 
 from typing import Any
@@ -81,7 +86,9 @@ class EvidenceAuditor:
                 ):
                     return (
                         False,
-                        "Metadata claim without observation: 'tax_id' declared in conflicting_anchors but no NIT recorded in direct_observations",
+                        "Metadata claim without observation: 'tax_id' declared in "
+                        "conflicting_anchors but no NIT recorded in "
+                        "direct_observations",
                     )
 
             return True, "Discard verified by conflicting anchors"
@@ -96,7 +103,8 @@ class EvidenceAuditor:
             if candidate.get("matched_anchors"):
                 return (
                     False,
-                    "Negative observation cannot have matched anchors for an unobserved profile",
+                    "Negative observation cannot have matched anchors for an "
+                    "unobserved profile",
                 )
             if candidate.get("confidence") != "negative_scoped":
                 return (
@@ -112,14 +120,15 @@ class EvidenceAuditor:
                 if len(matched) < 2:
                     return (
                         False,
-                        f"Attribution requires at least 2 anchors, found {len(matched)}",
+                        "Attribution requires at least 2 anchors, "
+                        f"found {len(matched)}",
                     )
             elif identity_status == "ambiguous":
                 if disposition != "hold":
                     return False, "Ambiguous identity must have disposition: hold"
                 return True, "Ambiguous candidate correctly retained in hold"
 
-            # Check Epistemic Separation: Promotional or third-party claims in direct_observations
+            # Check Epistemic Separation: Promotional claims in direct_observations
             for obs in candidate.get("direct_observations", []):
                 for promotional_word in [
                     "líder",
@@ -130,18 +139,20 @@ class EvidenceAuditor:
                     if promotional_word in obs.lower():
                         return (
                             False,
-                            f"Unevidenced promotional claim '{promotional_word}' found in direct_observations",
+                            f"Unevidenced promotional claim '{promotional_word}' "
+                            "found in direct_observations",
                         )
 
-            # Check Temporal Validity: Extrapolation of past records to current present state
+            # Check Temporal Validity: Extrapolation of past records
             source_date = raw_source.get("publication_date", "")
             relevant_period = candidate.get("relevant_period", "").lower()
             if source_date and "2023" in source_date:
                 if "2026" in relevant_period or "actual" in relevant_period:
-                    # Source from 2023 cannot assert current 2026 operational truth without fresh evidence
+                    # 2023 source cannot assert 2026 truth without fresh evidence
                     return (
                         False,
-                        f"Temporal validity violation: Source dated {source_date} extrapolated to {relevant_period}",
+                        f"Temporal validity violation: Source dated {source_date} "
+                        f"extrapolated to {relevant_period}",
                     )
 
             # Check Observation vs Underlying Page (snippet conflict)
@@ -155,7 +166,8 @@ class EvidenceAuditor:
                     ):
                         return (
                             False,
-                            "Direct observation adopted search snippet rather than underlying page reality",
+                            "Direct observation adopted search snippet rather "
+                            "than underlying page reality",
                         )
 
             return True, "Admissibility verified"
@@ -246,7 +258,8 @@ def run_all_adversarial_tests():
         "PASS (retained in hold, not attributed)"
     )
 
-    # Fixture 3: Historical address -> admit presence + proposed anchor with historical period
+    # Fixture 3: Historical address -> admit presence + proposed anchor
+    # with historical period
     c3 = {
         "id": "ADV-003",
         "candidate_kind": "presence",
@@ -291,7 +304,8 @@ def run_all_adversarial_tests():
         "matched_anchors": ["ANC-002", "ANC-003"],
         "proposed_anchors": ["ANC-007"],
         "direct_observations": [
-            "Acta municipal registra a Ledys del Rosario Martínez Lara como representante legal"
+            "Acta municipal registra a Ledys del Rosario Martínez Lara "
+            "como representante legal"
         ],
     }
     raw4 = {"publication_date": "2023-12-31"}
@@ -339,7 +353,8 @@ def run_all_adversarial_tests():
         "audit_status": "pending",
         "conflicting_anchors": ["legal_name"],
         "direct_observations": [
-            "La página de destino corresponde a Servicios Mineros de Colombia S.A., no a AMC Solutions"
+            "La página de destino corresponde a Servicios Mineros de Colombia S.A., "
+            "no a AMC Solutions"
         ],
     }
     passed_good, _ = auditor.audit_candidate(corrected_c5, raw5)
@@ -420,7 +435,8 @@ def run_all_adversarial_tests():
         "confidence": "negative_scoped",
         "matched_anchors": [],
         "direct_observations": [
-            "En la muestra de búsqueda en Google Maps no se observó perfil comercial verificado"
+            "En la muestra de búsqueda en Google Maps no se observó perfil "
+            "comercial verificado"
         ],
     }
     passed, _ = auditor.audit_candidate(c9, {})
@@ -459,11 +475,13 @@ def run_all_adversarial_tests():
             "status": "proposed",
         }
     )
-    # Orchestrator detects conflicting area code (+57 4 is Medellín, competitor conflict)
+    # Orchestrator detects conflicting area code (+57 4 is Medellín conflict)
     registry.reconcile_proposed(
         "ANC-099",
         accept=False,
-        rejection_reason="Conflicto de jurisdicción y homonimia con competidor en Medellín",
+        rejection_reason=(
+            "Conflicto de jurisdicción y homonimia con competidor en Medellín"
+        ),
     )
     assert "ANC-099" in registry.rejected and "ANC-099" not in registry.active
     results["11. Conflicting proposed anchor"] = (
@@ -471,7 +489,8 @@ def run_all_adversarial_tests():
     )
 
     # Fixture 12: THE TEMPORAL EXPLOIT & RE-ENTRY
-    # Worker correctly attributes entity, but fraudulently or carelessly sets relevant_period to 'actual 2026' on a 2023 source!
+    # Worker attributes entity, but carelessly sets relevant_period
+    # to 'actual 2026' on a 2023 source!
     exploit_c12 = {
         "id": "ADV-012",
         "candidate_kind": "presence",
@@ -513,7 +532,8 @@ def run_all_adversarial_tests():
     )
     assert eligible
     results["12. Temporal exploit & re-entry"] = (
-        "PASS (auditor caught 2026 leap, demoted to hold; worker repaired, re-entered, passed audit)"
+        "PASS (auditor caught 2026 leap, demoted to hold; "
+        "worker repaired, re-entered, passed audit)"
     )
 
     # Fixture 13: Metadata claim without observation (DISC-001 regression fixture)
@@ -531,7 +551,8 @@ def run_all_adversarial_tests():
     passed_bad, reason_bad = auditor.audit_candidate(bad_c13, {})
     assert not passed_bad and "metadata claim without observation" in reason_bad.lower()
 
-    # Re-entry: Worker remediates by grounding discard strictly on verifiable conflicting anchors (city, sector)
+    # Re-entry: Worker remediates by grounding discard strictly on
+    # verifiable conflicting anchors (city, sector)
     remediated_c13 = {
         "id": "ADV-013",
         "candidate_kind": "discard",
@@ -540,13 +561,15 @@ def run_all_adversarial_tests():
         "audit_status": "pending",
         "conflicting_anchors": ["city", "industry_sector"],
         "direct_observations": [
-            "Ficha mercantil en Bogotá (Calle 74) con actividad CIIU 7730 (alquiler de maquinaria)"
+            "Ficha mercantil en Bogotá (Calle 74) con actividad "
+            "CIIU 7730 (alquiler de maquinaria)"
         ],
     }
     passed_good, reason_good = auditor.audit_candidate(remediated_c13, {})
     assert passed_good and remediated_c13["disposition"] == "discard"
     results["13. Metadata claim without observation"] = (
-        "PASS (auditor caught unsupported tax_id assertion; remediated to verified anchors)"
+        "PASS (auditor caught unsupported tax_id assertion; "
+        "remediated to verified anchors)"
     )
 
     return results

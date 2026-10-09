@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "=== [PRE-COMMIT] Verificando calidad de código, análisis estático y pruebas ==="
+
+# Identificar archivos Python en staged (Added, Copied, Modified)
+STAGED_PY=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$' || true)
+
+if [ -z "$STAGED_PY" ]; then
+    echo "[PRE-COMMIT] No hay archivos Python en staged. Procediendo."
+    exit 0
+fi
+
+echo "[PRE-COMMIT] Archivos Python en staged:"
+echo "$STAGED_PY"
+
+# 1. Verificación de formato con ruff
+echo "[PRE-COMMIT] 1/4 Comprobando formato con ruff..."
+if ! ruff format --check $STAGED_PY; then
+    echo "ERROR: Falló el formato de código. Ejecuta 'ruff format <archivos>' antes de commitear." >&2
+    exit 1
+fi
+
+# 2. Verificación de reglas de linting con ruff
+echo "[PRE-COMMIT] 2/4 Comprobando reglas de linting con ruff..."
+if ! ruff check $STAGED_PY; then
+    echo "ERROR: Violaciones de linting detectadas con ruff. Corrige los errores o ejecuta 'ruff check --fix'." >&2
+    exit 1
+fi
+
+# 3. Comprobación de tipos con pyright
+echo "[PRE-COMMIT] 3/4 Comprobando tipos estáticos con pyright..."
+if ! pyright tools/; then
+    echo "ERROR: Se encontraron errores de tipado con pyright." >&2
+    exit 1
+fi
+
+# 4. Ejecución de pruebas automatizadas
+echo "[PRE-COMMIT] 4/4 Ejecutando suite de pruebas..."
+if [ -f "tools/test_audit_candidates.py" ]; then
+    PYTHONPATH=. python3 tools/test_audit_candidates.py
+fi
+
+if [ -f "tools/test/test_adversarial_contract.py" ]; then
+    PYTHONPATH=. python3 tools/test/test_adversarial_contract.py
+fi
+
+echo "=== [PRE-COMMIT] Todos los checks de linting, tipos y pruebas pasaron correctamente ==="
+exit 0

@@ -118,11 +118,16 @@ Do not invent missing information.
 ---
 ## Coding and Automation Standards
 
-- All scripts must pass the project's configured linting and static-analysis checks.
-- Changes must not introduce linting or static-analysis violations.
-- Non-trivial behavior should have tests.
-- Use inline documentation when intent is not obvious from the code.
-- Document non-obvious workflows, prerequisites, and usage in Markdown.
-- Keep scripts focused and avoid unnecessary abstractions or dependencies.
-- Handle expected errors explicitly.
-- Keep CLI behavior predictable and documented.
+- Si se crea o modifica cualquier archivo Python (`.py`), es obligatorio ejecutar y verificar:
+  1. Formateo de código: `ruff format <archivos o tools/>`
+  2. Linter y análisis estático: `ruff check <archivos o tools/> --fix`
+  3. Tipado estático: `pyright tools/`
+  4. Suite de pruebas: ejecutar los tests correspondientes (e.g. `PYTHONPATH=. python3 <script_de_prueba>`).
+- Todo script o modificación debe finalizar con código de salida 0 (sin advertencias ni errores) antes de dar por concluida la tarea o realizar commits.
+- El repositorio cuenta con un hook de pre-commit (`.githooks/pre-commit`) que bloquea automáticamente los commits si fallan el formateo, linting, análisis estático o las pruebas.
+- El comportamiento no trivial debe contar con pruebas (`tests`).
+- Usar documentación en línea cuando la intención no resulte obvia a partir del código.
+- Documentar flujos no obvios, prerrequisitos y uso en Markdown.
+- Mantener los scripts enfocados y evitar abstracciones o dependencias innecesarias.
+- Manejar errores esperados de forma explícita.
+- Mantener el comportamiento de la CLI predecible y documentado.

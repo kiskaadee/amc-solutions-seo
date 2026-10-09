@@ -26,12 +26,10 @@ candidates = [
             "Ficha mercantil en Portafolio/eInforma lista a Amc Solutions "
             "Colombia S A S con NIT 9013807700 en Valledupar, Cesar.",
             "Registra número telefónico 3144138478 coincidente con semilla.",
-            "Registra dirección física Carrera 14 # 13 C 60, Edificio Ágora, "
-            "Of. 308.",
+            "Registra dirección física Carrera 14 # 13 C 60, Edificio Ágora, Of. 308.",
         ],
         "source_claims": [
-            "Clasifica actividad bajo CIIU 4663 (comercio al por mayor de "
-            "materiales).",
+            "Clasifica actividad bajo CIIU 4663 (comercio al por mayor de materiales).",
             "Estima rango de ventas entre 1.000M y 2.000M COP.",
         ],
     },
@@ -74,9 +72,7 @@ candidates = [
         "id": "SRC-003",
         "candidate_kind": "presence",
         "source_class": 1,
-        "source_name": (
-            "Departamento Administrativo de la Función Pública (SIGEP)"
-        ),
+        "source_name": ("Departamento Administrativo de la Función Pública (SIGEP)"),
         "url": (
             "https://www.funcionpublica.gov.co/dafpIndexerBHV/hvSigep/"
             "detallarHV/S2360517-8062-5"
@@ -96,8 +92,7 @@ candidates = [
             "Hoja de vida pública en SIGEP del Ingeniero de Minas Jose Jorge "
             "Brochero Herrera (Valledupar) registra experiencia laboral en "
             "AMC SOLUTIONS COLOMBIA S.A.S.",
-            "Cargo registrado: INGENIERO DE MINAS, periodo 28/04/2020 a "
-            "28/04/2021.",
+            "Cargo registrado: INGENIERO DE MINAS, periodo 28/04/2020 a 28/04/2021.",
         ],
         "source_claims": [
             "Declaración juramentada institucional del servidor público en "

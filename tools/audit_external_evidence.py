@@ -75,8 +75,7 @@ class IndependentEvidenceAuditor:
         if kind == "negative_observation":
             if identity_status != "not_applicable":
                 reasons.append(
-                    "Observación negativa debe tener identity_status: "
-                    "'not_applicable'."
+                    "Observación negativa debe tener identity_status: 'not_applicable'."
                 )
             if candidate.get("matched_anchors"):
                 reasons.append(

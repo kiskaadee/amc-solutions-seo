@@ -80,7 +80,13 @@ def get_target_text(target_path: Path) -> str:
         except (subprocess.SubprocessError, FileNotFoundError):
             # Fallback to nix-shell pdftotext if needed
             res = subprocess.run(
-                ["nix-shell", "-p", "poppler-utils", "--run", f"pdftotext '{target_path}' -"],
+                [
+                    "nix-shell",
+                    "-p",
+                    "poppler-utils",
+                    "--run",
+                    f"pdftotext '{target_path}' -",
+                ],
                 capture_output=True,
                 text=True,
                 check=True,
@@ -123,7 +129,9 @@ def check_integrity(source_path: Path, target_path: Path) -> tuple[bool, list[st
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Verify content integrity between Markdown source and document target.")
+    parser = argparse.ArgumentParser(
+        description="Verify content integrity between Markdown source and document target."
+    )
     parser.add_argument("source_md", type=Path, help="Path to source Markdown file")
     parser.add_argument("target", type=Path, help="Path to target .typ or .pdf file")
     args = parser.parse_args()
@@ -139,10 +147,15 @@ def main():
     passed, missing = check_integrity(args.source_md, args.target)
 
     if passed:
-        print(f"PASS: All content blocks from '{args.source_md.name}' verified in '{args.target.name}'.")
+        print(
+            f"PASS: All content blocks from '{args.source_md.name}' verified in '{args.target.name}'."
+        )
         sys.exit(0)
     else:
-        print(f"FAIL: {len(missing)} content blocks from '{args.source_md.name}' were not found in '{args.target.name}':", file=sys.stderr)
+        print(
+            f"FAIL: {len(missing)} content blocks from '{args.source_md.name}' were not found in '{args.target.name}':",
+            file=sys.stderr,
+        )
         for i, m in enumerate(missing, 1):
             sample = m[:120] + "..." if len(m) > 120 else m
             print(f"  [{i}] {sample}", file=sys.stderr)
